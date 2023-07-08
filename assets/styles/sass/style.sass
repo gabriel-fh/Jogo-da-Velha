@@ -22,7 +22,7 @@ body
     height: 10vh
     @include mixins.flexCenter
     font-size: 2.5rem
-    z-index: 1
+    // z-index: 1
 
 .container
     grid-area: 2/1/2/3
@@ -70,6 +70,10 @@ body
 
         &-9
             grid-area: 4/4/4/4
+
+    .disappear
+        transition: .6s ease-in-out
+        scale: 0
 
 .mark-x, .mark-circle
     height: 100%
