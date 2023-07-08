@@ -28,19 +28,19 @@ body
     grid-area: 2/1/2/3
     height: 85vh
     display: grid
-    grid-template-columns: 50% auto auto auto   
+    grid-template-columns: 50% auto auto auto
     grid-template-rows: 12% auto auto auto 12%
 
     .square
         height: 100%
         width: 100%
-        cursor: pointer 
+        cursor: pointer
         display: grid
         place-items: center
-    
+
         &-1
             grid-area: 2/2/2/2
-        
+
         &-2
             grid-area: 2/3/2/3
 
@@ -56,7 +56,7 @@ body
         &-6
             grid-area: 3/4/3/4
 
-        &-7 
+        &-7
             grid-area: 4/2/4/2
 
         &-8
@@ -70,7 +70,7 @@ body
 
     .right-square
         border-left: .5rem solid variables.$color-white
-    
+
     .middle
         border-bottom: .5rem solid variables.$color-white
         border-top: .5rem solid variables.$color-white
@@ -108,7 +108,7 @@ body
 
 .score
     @include mixins.flexCenter
-    grid-area: 2/3/2/3 
+    grid-area: 2/3/2/3
     width: 100%
     height: 40%
 
@@ -119,7 +119,7 @@ body
         border-collapse: collapse
         text-align: center
 
-        th, td 
+        th, td
             border: 1px solid variables.$color-darkGray
             padding: 10px
             font-size: 1.6rem
@@ -129,7 +129,7 @@ body
     @include mixins.flexCenter
     flex-direction: column
     width: 100%
-    height: 40%     
+    height: 40%
     gap: 2.5rem
 
     .player
@@ -140,7 +140,7 @@ body
         width: 50%
         font-size: 2rem
         font-weight: bold
-  
+
     .mark-x
         height: 5rem
         width: 3.5rem
@@ -152,7 +152,6 @@ body
     .mark-x::after
         height: .7rem
         background-color: variables.$color-white
-
 
     .mark-circle::before
         content: ''
@@ -171,7 +170,3 @@ body
     p a
         text-decoration: none
         color: variables.$color-white
-
-    
-    
-
