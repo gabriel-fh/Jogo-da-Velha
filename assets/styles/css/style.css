@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  font-size: 62.55%;
+}
+
+body {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 100vh;
+  color: #fff;
+  background-color: #000;
+}
+
+.header {
+  grid-area: 1/1/1/3;
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  z-index: 1;
+}
+
+.container {
+  grid-area: 2/1/2/3;
+  height: 85vh;
+  display: grid;
+  place-items: center;
+  grid-template-columns: 35% auto auto auto 35%;
+  grid-template-rows: 12% auto auto auto 12%;
+}
+.container .square {
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+.container .square-1 {
+  grid-area: 2/2/2/2;
+}
+.container .square-2 {
+  grid-area: 2/3/2/3;
+}
+.container .square-3 {
+  grid-area: 2/4/2/4;
+}
+.container .square-4 {
+  grid-area: 3/2/3/2;
+}
+.container .square-5 {
+  grid-area: 3/3/3/3;
+}
+.container .square-6 {
+  grid-area: 3/4/3/4;
+}
+.container .square-7 {
+  grid-area: 4/2/4/2;
+}
+.container .square-8 {
+  grid-area: 4/3/4/3;
+}
+.container .square-9 {
+  grid-area: 4/4/4/4;
+}
+.container .left-square {
+  border-right: 0.5rem solid #fff;
+}
+.container .right-square {
+  border-left: 0.5rem solid #fff;
+}
+.container .middle {
+  border-bottom: 0.5rem solid #fff;
+  border-top: 0.5rem solid #fff;
+}
+.container .mark-x, .container .mark-circle {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+.container .mark-x::before,
+.container .mark-x::after {
+  content: "";
+  position: absolute;
+  width: 80%;
+  height: 2rem;
+  background-color: red;
+}
+.container .mark-x::before {
+  transform: rotate(45deg);
+  left: 1;
+}
+.container .mark-x::after {
+  transform: rotate(-45deg);
+  right: 1;
+}
+.container .mark-circle::before {
+  content: "";
+  position: absolute;
+  height: 50%;
+  width: 50%;
+  border-radius: 50%;
+  border: 1.5rem solid #fff;
+}
+
+.footer {
+  grid-area: 3/1/3/3;
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+}
+.footer p a {
+  text-decoration: none;
+  color: #fff;
+}
+
+/*# sourceMappingURL=style.css.map */
