@@ -14,7 +14,7 @@ body
     @include mixins.displayGrid
     height: 100vh
     color: variables.$color-white
-    background-color: variables.$color-black
+    background-image: linear-gradient(to right top, variables.$color-eletricPurple, variables.$color-purpleOrchild, variables.$color-lavenderPurple)
 
 .header
     grid-area: 1/1/1/4
@@ -28,19 +28,25 @@ body
     grid-area: 2/1/2/3
     height: 85vh
     display: grid
-    grid-template-columns: 50% auto auto auto   
+    place-items: center
+    grid-template-columns: 50% auto auto auto
     grid-template-rows: 12% auto auto auto 12%
 
     .square
-        height: 100%
-        width: 100%
-        cursor: pointer 
+        height: 90%
+        width: 90%
+        cursor: pointer
         display: grid
         place-items: center
-    
+        background: variables.$color-transparentWhiteOne
+        backdrop-filter: blur( 4px )
+        -webkit-backdrop-filter: blur( 4px )
+        border-radius: 10px
+        border: 1px solid variables.$color-transparentWhiteTwo
+
         &-1
             grid-area: 2/2/2/2
-        
+
         &-2
             grid-area: 2/3/2/3
 
@@ -56,7 +62,7 @@ body
         &-6
             grid-area: 3/4/3/4
 
-        &-7 
+        &-7
             grid-area: 4/2/4/2
 
         &-8
@@ -64,16 +70,6 @@ body
 
         &-9
             grid-area: 4/4/4/4
-
-    .left-square
-        border-right: .5rem solid variables.$color-white
-
-    .right-square
-        border-left: .5rem solid variables.$color-white
-    
-    .middle
-        border-bottom: .5rem solid variables.$color-white
-        border-top: .5rem solid variables.$color-white
 
 .mark-x, .mark-circle
     height: 100%
@@ -108,9 +104,9 @@ body
 
 .score
     @include mixins.flexCenter
-    grid-area: 2/3/2/3 
+    grid-area: 2/3/2/3
     width: 100%
-    height: 40%
+    height: 48%
 
     table
         width: 60%
@@ -119,8 +115,8 @@ body
         border-collapse: collapse
         text-align: center
 
-        th, td 
-            border: 1px solid variables.$color-darkGray
+        th, td
+            border: .2rem solid variables.$color-transparentWhiteTwo
             padding: 10px
             font-size: 1.6rem
 
@@ -129,18 +125,57 @@ body
     @include mixins.flexCenter
     flex-direction: column
     width: 100%
-    height: 40%     
+    height: 67.5%
     gap: 2.5rem
 
     .player
         @include mixins.flexCenter
-        justify-content: space-around
+        justify-content: space-evenly
         height: 5rem
-        border: .2rem solid variables.$color-darkGray
-        width: 50%
+        border: .2rem solid variables.$color-transparentWhiteTwo
+        width: 60%
         font-size: 2rem
         font-weight: bold
-  
+        position: relative
+
+    #result
+        font-size: 2.5rem
+        font-weight: bold
+
+    .hide
+        visibility: hidden
+
+    #btnPlayAgain
+        border: .2rem solid variables.$color-transparentWhiteTwo
+        padding: 1rem
+        background-color: transparent
+        color: variables.$color-white
+        font-size: 2rem
+        font-weight: bold
+        cursor: pointer
+        z-index: 1
+
+    #btnPlayAgain:hover
+        background: variables.$color-transparentWhiteTwo
+        backdrop-filter: blur( 4px )
+        -webkit-backdrop-filter: blur( 4px )
+        border: 1px solid variables.$color-transparentWhiteTwo
+        scale: 1.07
+        transition: .4s ease-in-out
+        cursor: pointer
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.01)
+        border: .1rem solid variables.$color-white
+
+    .active
+        background: variables.$color-transparentWhiteOne
+        backdrop-filter: blur( 4px )
+        -webkit-backdrop-filter: blur( 4px )
+        border: 1px solid variables.$color-transparentWhiteTwo
+        scale: 1.07
+        transition: .4s ease-in-out
+        cursor: pointer
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.01)
+
     .mark-x
         height: 5rem
         width: 3.5rem
@@ -152,7 +187,6 @@ body
     .mark-x::after
         height: .7rem
         background-color: variables.$color-white
-
 
     .mark-circle::before
         content: ''
@@ -171,7 +205,3 @@ body
     p a
         text-decoration: none
         color: variables.$color-white
-
-    
-    
-

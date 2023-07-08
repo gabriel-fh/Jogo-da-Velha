@@ -28,7 +28,7 @@
     </header>
 
     <article class="players">
-        <div class="player player-one">
+        <div class="player player-one active">
             <div class="mark-x"></div>
             <p>Jogador 1</p>
         </div>
@@ -36,6 +36,8 @@
             <div class="mark-circle"></div>
             <p>Jogador 2</p>
         </div>
+        <p id="result" class="hide">Jogador 1 Venceu!</p>
+        <button id="btnPlayAgain" class="hide">Jogar Novamente</button>
     </article>
 
     <main class="container">
@@ -64,12 +66,12 @@
             <tr>
                 <th>Jogador 1</th>
                 <th>Jogador 2</th>
-                <th>Velha</th>
+                <th>Empates</th>
             </tr>
             <tr>
-                <td>10pts</td>
-                <td>15pts</td>
-                <td>8pts</td>
+                <td id="playerOnePts">10pts</td>
+                <td id="playertwPts">15pts</td>
+                <td id="draw">8</td>
             </tr>
         </table>
     </article>

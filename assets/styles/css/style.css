@@ -14,7 +14,7 @@ body {
   grid-template-columns: repeat(3, 1fr);
   height: 100vh;
   color: #fff;
-  background-color: #000;
+  background-image: linear-gradient(to right top, #9f21e3, #b333e9, #cb5df1);
 }
 
 .header {
@@ -32,15 +32,21 @@ body {
   grid-area: 2/1/2/3;
   height: 85vh;
   display: grid;
+  place-items: center;
   grid-template-columns: 50% auto auto auto;
   grid-template-rows: 12% auto auto auto 12%;
 }
 .container .square {
-  height: 100%;
-  width: 100%;
+  height: 90%;
+  width: 90%;
   cursor: pointer;
   display: grid;
   place-items: center;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 .container .square-1 {
   grid-area: 2/2/2/2;
@@ -68,16 +74,6 @@ body {
 }
 .container .square-9 {
   grid-area: 4/4/4/4;
-}
-.container .left-square {
-  border-right: 0.5rem solid #fff;
-}
-.container .right-square {
-  border-left: 0.5rem solid #fff;
-}
-.container .middle {
-  border-bottom: 0.5rem solid #fff;
-  border-top: 0.5rem solid #fff;
 }
 
 .mark-x, .mark-circle {
@@ -122,7 +118,7 @@ body {
   justify-content: center;
   grid-area: 2/3/2/3;
   width: 100%;
-  height: 40%;
+  height: 48%;
 }
 .score table {
   width: 60%;
@@ -134,7 +130,7 @@ body {
   text-align: center;
 }
 .score table th, .score table td {
-  border: 1px solid #4a4a4a;
+  border: 0.2rem solid rgba(255, 255, 255, 0.18);
   padding: 10px;
   font-size: 1.6rem;
 }
@@ -146,19 +142,58 @@ body {
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  height: 40%;
+  height: 67.5%;
   gap: 2.5rem;
 }
 .players .player {
   display: flex;
   align-items: center;
   justify-content: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
   height: 5rem;
-  border: 0.2rem solid #4a4a4a;
-  width: 50%;
+  border: 0.2rem solid rgba(255, 255, 255, 0.18);
+  width: 60%;
   font-size: 2rem;
   font-weight: bold;
+  position: relative;
+}
+.players #result {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+.players .hide {
+  visibility: hidden;
+}
+.players #btnPlayAgain {
+  border: 0.2rem solid rgba(255, 255, 255, 0.18);
+  padding: 1rem;
+  background-color: transparent;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1;
+}
+.players #btnPlayAgain:hover {
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  scale: 1.07;
+  transition: 0.4s ease-in-out;
+  cursor: pointer;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.01);
+  border: 0.1rem solid #fff;
+}
+.players .active {
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  scale: 1.07;
+  transition: 0.4s ease-in-out;
+  cursor: pointer;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.01);
 }
 .players .mark-x {
   height: 5rem;
