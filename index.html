@@ -26,10 +26,22 @@
     <header class="header">
         <h1>Jogo da Velha</h1>
     </header>
+
+    <article class="players">
+        <div class="player player-one">
+            <div class="mark-x"></div>
+            <p>Jogador 1</p>
+        </div>
+        <div class="player player-two">
+            <div class="mark-circle"></div>
+            <p>Jogador 2</p>
+        </div>
+    </article>
+
     <main class="container">
         <!-- Esquerda -->
         <div class="square square-1 left-square upper-left-square">
-            <!-- <div class="mark-x"></div> -->
+            <div class="mark-x"></div>
         </div>
         <div class="square square-2 middle-square upper-middle-square">
             <!-- <div class="mark-circle"></div> -->
@@ -43,8 +55,24 @@
         <div class="square square-7 left-square upper-left-square"></div>
         <div class="square square-8 middle-square upper-middle-square"></div>
         <div class="square square-9 right-square upper-right-square"></div>
-
     </main>
+    <article class="score">
+        <table>
+            <tr>
+                <th colspan="3">Pontuação</th>
+            </tr>
+            <tr>
+                <th>Jogador 1</th>
+                <th>Jogador 2</th>
+                <th>Velha</th>
+            </tr>
+            <tr>
+                <td>10pts</td>
+                <td>15pts</td>
+                <td>8pts</td>
+            </tr>
+        </table>
+    </article>
     <footer class="footer">
         <p>Jogo da Velha &copy; 2023 - Todos os direitos reservados Desenvolvido por:
             <a href="https://github.com/gabriel-fh" target="_blank">Gabriel F. Hermenegildo</a>
